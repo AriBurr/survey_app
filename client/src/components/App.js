@@ -1,5 +1,18 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Header from './Header';
 
-const App = () => <div>Hi There!</div>;
+const App = () => {
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/surveys" component={Dashboard} />
+        <Route exact path="/surveys/new" component={SurveyNew} />
+      </Switch>
+    </div>
+  );
+};
 
 export default App;
